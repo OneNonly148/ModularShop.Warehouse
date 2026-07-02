@@ -2,7 +2,7 @@ using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Metadata.Builders;
 using ModularShop.Modules.Warehouse.Domain;
 
-namespace ModularShop.Modules.Warehouse.Infrastructure.Configurations;
+namespace ModularShop.Modules.Warehouse.Infrastructure.Persistence.Configurations;
 
 internal sealed class ProductConfiguration : IEntityTypeConfiguration<Product>
 {

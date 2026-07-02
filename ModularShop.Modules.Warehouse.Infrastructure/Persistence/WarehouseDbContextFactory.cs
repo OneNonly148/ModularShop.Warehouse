@@ -1,7 +1,7 @@
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Design;
 
-namespace ModularShop.Modules.Warehouse.Infrastructure;
+namespace ModularShop.Modules.Warehouse.Infrastructure.Persistence;
 
 /// <summary>
 /// Design-time factory so <c>dotnet ef</c> can build this module's DbContext without booting the

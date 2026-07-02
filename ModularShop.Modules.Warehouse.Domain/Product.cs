@@ -1,13 +1,14 @@
-using ModularShop.SharedKernel.Domain;
+using ModularShop.Kernel.Domain;
 
 namespace ModularShop.Modules.Warehouse.Domain;
 
 /// <summary>
-/// A product in the catalogue, owned entirely by the Warehouse module. It is <c>internal</c>:
-/// no other module can reference this type. Other modules see only the public <c>ProductStock</c>
-/// DTO returned by <c>IWarehouseApi</c>. This is encapsulation enforced by the compiler.
+/// A product in the catalogue, owned entirely by the Warehouse module. Its type is visible only
+/// within the Warehouse module's own projects — no OTHER module references the Warehouse Domain
+/// assembly, so the boundary is enforced by the project-reference graph. Other modules see only the
+/// public <c>ProductStock</c> DTO returned by <c>IWarehouseApi</c>.
 /// </summary>
-internal sealed class Product : Entity
+public sealed class Product : Entity
 {
     public string Sku { get; private set; } = default!;
     public string Name { get; private set; } = default!;

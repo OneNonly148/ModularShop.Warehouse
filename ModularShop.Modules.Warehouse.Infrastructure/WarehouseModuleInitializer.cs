@@ -1,14 +1,14 @@
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Logging;
+using ModularShop.Kernel.Infrastructure;
 using ModularShop.Modules.Warehouse.Domain;
-using ModularShop.Modules.Warehouse.Infrastructure;
-using ModularShop.SharedKernel.Infrastructure;
+using ModularShop.Modules.Warehouse.Infrastructure.Persistence;
 
-namespace ModularShop.Modules.Warehouse;
+namespace ModularShop.Modules.Warehouse.Infrastructure;
 
 /// <summary>
-/// Migrates the Warehouse schema and seeds the product catalogue on startup. The module owns this
-/// — the host only knows it as an <see cref="IModuleInitializer"/>.
+/// Migrates the Warehouse schema and seeds the product catalogue on startup. The module owns this —
+/// the host only knows it as an <see cref="IModuleInitializer"/>.
 /// </summary>
 internal sealed class WarehouseModuleInitializer : IModuleInitializer
 {
@@ -30,7 +30,8 @@ internal sealed class WarehouseModuleInitializer : IModuleInitializer
 
         _db.Products.AddRange(WarehouseSeed.Products());
         await _db.SaveChangesAsync(cancellationToken);
-        _logger.LogInformation("Seeded Warehouse catalogue ({Count} products).", await _db.Products.CountAsync(cancellationToken));
+        _logger.LogInformation("Seeded Warehouse catalogue ({Count} products).",
+            await _db.Products.CountAsync(cancellationToken));
     }
 }
 

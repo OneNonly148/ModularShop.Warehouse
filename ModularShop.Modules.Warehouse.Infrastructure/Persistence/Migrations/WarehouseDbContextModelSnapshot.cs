@@ -4,11 +4,11 @@ using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
-using ModularShop.Modules.Warehouse.Infrastructure;
+using ModularShop.Modules.Warehouse.Infrastructure.Persistence;
 
 #nullable disable
 
-namespace ModularShop.Modules.Warehouse.Migrations
+namespace ModularShop.Modules.Warehouse.Infrastructure.Persistence.Migrations
 {
     [DbContext(typeof(WarehouseDbContext))]
     partial class WarehouseDbContextModelSnapshot : ModelSnapshot

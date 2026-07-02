@@ -1,8 +1,8 @@
 using Microsoft.EntityFrameworkCore;
+using ModularShop.Kernel.Infrastructure.Persistence;
 using ModularShop.Modules.Warehouse.Domain;
-using ModularShop.SharedKernel.Infrastructure.Persistence;
 
-namespace ModularShop.Modules.Warehouse.Infrastructure;
+namespace ModularShop.Modules.Warehouse.Infrastructure.Persistence;
 
 /// <summary>
 /// The Warehouse module's own DbContext. It derives from <see cref="ModuleDbContext"/>, so all its
