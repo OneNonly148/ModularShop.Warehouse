@@ -41,4 +41,11 @@ public sealed class Product : Entity
         if (quantity <= 0) return;
         StockQuantity = Math.Max(0, StockQuantity - quantity);
     }
+
+    /// <summary>Returns units to available stock. Called when an order is cancelled (restock).</summary>
+    public void IncreaseStock(int quantity)
+    {
+        if (quantity <= 0) return;
+        StockQuantity += quantity;
+    }
 }
